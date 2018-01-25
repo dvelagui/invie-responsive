@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Invie - tus mejores guitarras!!!</title>
+
+    <!-- <link rel="stylesheet" media="(max-width: 800px)" href="css/media-querie.css"> -->
+    <style media="screen">
+      @import url('https://fonts.googleapis.com/css?family=Allerta|Montserrat');
+      @font-face {
+        font-family: 'icomoon';
+        src: url("fonts/icomoon.eot?e5ojgm");
+        src: url("fonts/icomoon.eot?e5ojgm#iefix") format("embedded-opentype"),url(fonts/icomoon.ttf?e5ojgm) format("truetype"),url(fonts/icomoon.woff?e5ojgm) format("woff"),url(fonts/icomoon.svg?e5ojgm#icomoon) format("svg");
+        font-weight: 400;
+        font-style: normal;
+      }
+      [class*=" icon-"] {
+        font-family: 'icomoon'!important;
+        speak: none;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .icon-menu:before {
+        content: "\e9bd";
+      }
+      body {
+        font-family: 'Allerta',sans-serif;
+        margin: 0;
+      }
+      .background {
+        background-image: url("images/background.png");
+        background-size: cover;
+      }
+      .contenedor {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+      }
+      .guitarras {
+        color: #36b165;
+      }
+      .guitarras h2 {
+        font-size: 35px;
+        font-family: 'Montserrat',sans-serif;
+        margin: 10px;
+      }
+      .guitarRight {
+        float: right;
+        position: relative;
+        top: -140px;
+      }
+      .logotipo {
+        display: inline-block;
+        margin-left: 0;
+      }
+      .menu {
+        font-size: 24px;
+        display: inline-block;
+        position: absolute;
+        right: 0;
+      }
+      .menu li {
+        display: inline-block;
+        margin-left: 30px;
+      }
+      .menu a {
+        color: #fff;
+        text-decoration: none;
+      }
+      .menu li:before {
+        content: "•";
+        color: #fff;
+        line-height: 50px;
+      }
+      .title-a {
+        font-size: 25px;
+        margin-top: 0;
+      }
+      .titulo {
+        font-size: 70px;
+        font-family: 'Montserrat',sans-serif;
+        margin-bottom: 0;
+        margin-top: 70px;
+      }
+      .titulo span {
+        text-decoration: underline;
+      }
+      .portada {
+        color: #fff;
+        padding: 20px;
+        height: 500px;
+      }
+      .boton {
+        margin-bottom: 70px;
+        border-radius: 12px;
+        color: #fff;
+        background: linear-gradient(to left,#fe344e,#ff7250);
+        border: none;
+        padding: 12px;
+        font-size: 18px;
+        text-decoration: none;
+      }
+      header {
+        position: relative;
+      }
+      .burguer-button {
+        width: 40px;
+        line-height: 40px;
+        border-radius: 50%;
+        background: #395667;
+        display: inline-block;
+        height: 40px;
+        text-align: center;
+        position: fixed;
+        left: 20px;
+        top: 20px;
+        z-index: 3;
+        color: #fff;
+        display: none;
+      }
+      .video-contenedor {
+        position: relative;
+        padding-top: 56.4%;
+      }
+      .video-src {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .video-demo {
+        max-width: 500px;
+        margin: 0 auto;
+        border: 5px solid #1b153b;
+        margin-bottom: 85px;
+      }
+      @media screen and (max-width: 800px) {
+        .cabecera,
+        .contenedor {
+          position: static;
+        }
+        .titulo {
+          font-size: 45px;
+          margin-top: 25px;
+        }
+        .title-a {
+          font-size: 18px;
+          margin: 20px 0;
+        }
+        .portada {
+          height: auto;
+        }
+        .portada .boton {
+          margin-bottom: 30px;
+          display: inline-block;
+        }
+        .video-contenedor {
+          margin-bottom: 0;
+        }
+        .video-demo {
+          margin-bottom: 0;
+        }
+        .guitarras {
+          text-align: center;
+        }
+        .guitarRight {
+          float: none;
+          position: static;
+        }
+      }
+      @media screen and (max-width: 650px) {
+        .cabecera {
+          text-align: center;
+        }
+        .logotipo {
+          margin: 0;
+        }
+        .menu {
+          position: static;
+          display: block;
+        }
+        .menu li:first-child {
+          margin: 0;
+        }
+        .menu ul {
+          padding: 0;
+        }
+      }
+      @media screen and (max-width: 500px) {
+        .portada .contenedor {
+          position: static;
+        }
+        .cabecera,
+        .contenedor {
+          position: static;
+        }
+        .menu {
+          background: rgba(255,60,88,0.8);
+          position: fixed;
+          left: -100%;
+          top: 0;
+          z-index: 2;
+          bottom: 0;
+          right: 0;
+          display: flex;
+          align-items: center;
+          width: 100%;
+        }
+        .menu li {
+          display: block;
+          margin: 0;
+          padding: 10px 0;
+          border-bottom: 1px solid #fff;
+        }
+        .menu li:before {
+          display: none;
+        }
+        .menu li:first-child {
+          border-top: 1px solid #fff;
+        }
+        .menu ul {
+          flex: 1;
+        }
+        .portada {
+          text-align: center;
+        }
+        .titulo {
+          font-size: 30px;
+        }
+        .title-a {
+          font-size: 15px;
+        }
+        .guitarra img {
+          width: 250px;
+        }
+        .burguer-button {
+          display: block;
+        }
+        .video-contenedor {
+          margin-bottom: 0;
+        }
+        .video-demo {
+          margin: 0 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="portada background" id="portada ">
+      <header class="cabecera contenedor " id="header">
+        <!-- cabecera -->
+        <figure class="logotipo">
+          <!-- logotipo -->
+          <img src="images/invie.png" width="186" height="60" alt="invie logotipo">
+        </figure>
+        <span id="burguer-button" class="burguer-button icon-menu"></span>
+        <nav class="menu" id="menu">
+          <!-- menu -->
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="precios.html">Precios</a>
+            </li>
+            <li>
+              <a href="#guitarras">Guitarras</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- portada -->
+      <div class="contenedor">
+        <h1 class="titulo">Guitarras
+          <span>Invie</span>sibles</h1>
+        <!-- titulo -->
+        <h3 class="title-a">Sé la estrella de rock que siempre quisiste ser</h3>
+        <!-- resumen -->
+        <a class="boton" type="button" href="#guitarras">conoce mas</a>
+        <!-- boton -->
+      </div>
+    </section>
+    <section class="guitarras contenedor" id="guitarras">
+      <!-- guitarras -->
+      <h2>Nuestras guitarras</h2>
+      <!-- titulo -->
+      <div class="video-demo">
+        <div class="video-contenedor">
+          <iframe class="video-src" width="560" height="315" src="https://www.youtube.com/embed/R1dW8M4EqYY" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+        </div>
+      </div>
+      <article class="guitarra">
+        <!-- guitarra 1 -->
+        <img class="guitarRight" data-src="images/invie-acustica.png" width="370" alt="guitarra acustica">
+        <div class="titleGuitarRight">
+          <h3 class="title-b">Invie Acustica</h3>
+          <ol>
+            <li>Estilo Vintage</li>
+            <li>Madera Pura</li>
+            <li>Incluye estuche invisible de aluminio</li>
+          </ol>
+        </div>
+      </article>
+      <article class="guitarra">
+        <!-- guitarra 2 -->
+        <img class="guitarLeft" data-src="images/invie-classic.png" width="400" alt="guitarra clasica">
+        <div class="titleGuitarLeft">
+          <h3 class="title-b">Invie Clasica</h3>
+          <ol>
+            <li>Estilo Vintage</li>
+            <li>liviana</li>
+            <li>inicia tu camino como RockStar</li>
+          </ol>
+        </div>
+      </article>
+    </section>
+    <footer class="footer piePagina">
+      <div class="pu">
+
+        <div class="contenedor">
+          <div class="contacto">
+            <img data-src="images/invie-white.png" alt="logo_blanco">
+            <div class="telmail">
+              <a href="tel:+573208467809">
+                <strong>Telefono</strong>
+                <span>3208467809</span></a>
+              <a href="mailto:contacto@invie.com">
+                <strong>E-mail</strong>
+                <span>mail@mail.com.co</span></a>
+            </div>
+          </div>
+          <form class="formulario">
+            <div class="col1">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" required="required" name="nombre"/>
+
+              <label for="email">Email</label>
+              <input type="email" id="email" required="required" name="email"/>
+
+              <div class="sexo">
+                <label for="mujer">
+                  <input type="radio" id="mujer" checked="checked" name="sexo" value="mujer">Mujer
+                </label>
+                <label for="hombre">
+                  <input type="radio" id="hombre" name="sexo" value="hombre">Hombre
+                </label>
+              </div>
+              <div class="intereses">
+                <label for="cotizacion">
+                  <input type="checkbox" checked="checked" name="intereses" value="cotizacion" id="cotizacion">Cotización
+                </label>
+                <label for="reclamos">
+                  <input type="checkbox" name="intereses" value="reclamos" id="reclamos">Reclamos
+                </label>
+                <label for="comentarios">
+                  <input type="checkbox" name="intereses" value="comentariios" id="comentarios">
+                  Comentarios
+                </label>
+                <label for="otros">
+                  <input type="checkbox" name="intereses" value="otros" id="otros"/>
+                  Otros
+                </label>
+              </div>
+            </div>
+            <div class="col2">
+              <div class="asunto">
+                <label for="asunto">Asunto:
+                  <textarea id="asunto" name="comentarios" rows="8" cols="40"></textarea>
+                  <div class="enviar">
+
+                    <input class="boton" type="submit" name="" value="enviar"/>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+    <script>
+      // gestos
+      const $body = document.body
+
+      const gestos = new Hammer($body);
+      gestos.on('swipeleft', hideMenu)
+      gestos.on('swiperight', showMenu)
+      // gestos
+      var consulta = window.matchMedia("(max-width: 800px)")
+      consulta.addListener(mediaQuery)
+
+      function mediaQuery() {
+        if (consulta.matches) {
+          console.log("si se cumple la condicion");
+        } else {
+          console.log("no se cumple la condicion");
+        }
+      }
+      const $burguerButton = document.getElementById("burguer-button")
+      const $menu = document.getElementById("menu")
+      $burguerButton.addEventListener("touchstart", abrirMenu)
+
+      function abrirMenu() {
+        $menu.classList.toggle("active")
+
+      }
+      function showMenu() {
+        $menu.classList.add("active")
+
+      }
+      function hideMenu() {
+        $menu.classList.remove("active")
+
+      }
+
+      var bLazy = new Blazy({selector: "img"});
+    </script>
+    <link rel="stylesheet" href="css/invie.min.css">
+  </body>
+</html>
